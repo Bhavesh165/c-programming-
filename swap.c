@@ -1,19 +1,15 @@
 #include <stdio.h>
+void fun(int x[])
+{
+    int temp = x[0];
+    x[0] = x[1];
+    x[1] = temp;
+}
 int main()
 {
-    int a, b;
-    printf("enter the value of a  ");
-    scanf("%d", &a);
-
-    printf("enter the value of b  ");
-    scanf("%d", &b);
-
-    int c;
-    c = a;
-    a = b;
-    b = c;
-    printf("the new value of a is %d\n", a);
-    printf("the new value of b is %d\n", b);
-
+    int arr[2] = {5, 8};
+    printf("old elements are %d %d\n", arr[0], arr[1]);
+    fun(arr);
+    printf("new elements are %d %d\n", arr[0], arr[1]);
     return 0;
 }
